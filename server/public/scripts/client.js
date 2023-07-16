@@ -1,8 +1,12 @@
 console.log('script sourced');
 
+let maxCost = 20000;
+//let monthCost = annualSal % 2;
+
 function submitForm(event){
   console.log('submitForm');
   event.preventDefault();
+  
   
 
   let firstName = document.querySelector('#firstName').value;
@@ -31,9 +35,19 @@ function submitForm(event){
         <td>${annualSal}</td>
         <td><button onclick="removeRow(event)">Delete</button></td>
      
-  `
+  `;
+
+   let monthlyCost = Number(annualSal / 12);
+        document.querySelector('#monthlyCost').innerHTML = monthlyCost;
+  
+
+console.log(monthlyCost);
+
 };
 
 function removeRow(event){
   event.target.closest('tr').remove();
 };
+
+
+

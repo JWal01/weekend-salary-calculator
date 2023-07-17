@@ -15,11 +15,11 @@
   <form onSubmit="submitForm(event)">
     <h2>Add Employee</h2>
 
-    <input type="text" id="firstName" placeholder="First Name"></input>
-    <input type="text" id="lastName" placeholder="Last Name"></input>
-    <input type="number" id="ID" placeholder="ID"></input>
-    <input type="text" id="title" placeholder="Title"></input>
-    <input type="number" id="annualSalary" placeholder="Annual Salary"></input>
+    <input class="input" type="text" id="firstName" placeholder="First Name"></input>
+    <input class="input" type="text" id="lastName" placeholder="Last Name"></input>
+    <input class="input" type="number" id="ID" placeholder="ID"></input>
+    <input class="input" type="text" id="title" placeholder="Title"></input>
+    <input class="input" type="number" id="annualSalary" placeholder="Annual Salary"></input>
     <br>
     <br>
     <input type="submit" value="Submit"  />
@@ -28,7 +28,8 @@
     <br>
 
     <table id="employeeInfo">
-      <thead>Employees
+      <thead>
+        <h4>Employees</h4>
         <tr>
           <th>First Name</th>
           <th>Last Name</th>

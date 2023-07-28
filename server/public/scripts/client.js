@@ -2,13 +2,14 @@ console.log('script sourced');
 
 let maxCost = 20000;
 //let monthCost = annualSal % 2;
+let annualSalData = [];
+
+
 
 function submitForm(event){
   console.log('submitForm');
   event.preventDefault();
   
-  
-
   let firstName = document.querySelector('#firstName').value;
   
 
@@ -21,7 +22,7 @@ function submitForm(event){
   let title = document.querySelector('#title').value;
   
 
-  let annualSal = document.querySelector('#annualSalary').value;
+  let annualSal = parseInt(document.querySelector('#annualSalary').value);
   
 
   let employeeDataTable = document.querySelector('#employeeData');
@@ -37,13 +38,43 @@ function submitForm(event){
      
   `;
 
+  function addSal(annualSal) {
+    annualSal = document.getElementById('annualSalary').value;
+    annualSalData.push(annualSal);  
+    console.log(annualSalData);
+    return false;
+  }
+addSal();
+
+
+
+
    let monthlyCost = Number(annualSal / 12);
+   
         document.querySelector('#monthlyCost').innerHTML = monthlyCost;
+    if(monthlyCost > maxCost){
+      document.querySelector('#monthlyCost').backgroundColor = 'red';
+    }
+      
   
 
 console.log(monthlyCost);
 
+let sum = 0;
+
+// iterate over each item in the array
+for (let i = 0; i < annualSalData.length; i++ ) {
+  sum += annualSalData[i];
+}
+
+console.log(sum) // 15
+
 };
+
+
+
+
+
 
 function removeRow(event){
   event.target.closest('tr').remove();
